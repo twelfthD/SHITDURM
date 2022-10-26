@@ -1,0 +1,30 @@
+C:\Program Files (x86)\EPSON\EPSON Advanced Printer Driver 4\Sample\T82\Src\VBNET\SingleFunction\Program04\Program04\bin\Program04.exe
+C:\Program Files (x86)\EPSON\EPSON Advanced Printer Driver 4\Sample\T82\Src\VBNET\SingleFunction\Program04\Program04\bin\Program04.pdb
+C:\Program Files (x86)\EPSON\EPSON Advanced Printer Driver 4\Sample\T82\Src\VBNET\SingleFunction\Program04\Program04\bin\Program04.xml
+C:\Program Files (x86)\EPSON\EPSON Advanced Printer Driver 4\Sample\T82\Src\VBNET\SingleFunction\Program04\Program04\obj\Debug\Program04.Form1.resources
+C:\Program Files (x86)\EPSON\EPSON Advanced Printer Driver 4\Sample\T82\Src\VBNET\SingleFunction\Program04\Program04\obj\Debug\Program04.vbproj.GenerateResource.cache
+C:\Program Files (x86)\EPSON\EPSON Advanced Printer Driver 4\Sample\T82\Src\VBNET\SingleFunction\Program04\Program04\obj\Debug\Program04.vbproj.CoreCompileInputs.cache
+C:\Program Files (x86)\EPSON\EPSON Advanced Printer Driver 4\Sample\T82\Src\VBNET\SingleFunction\Program04\Program04\obj\Debug\Program04.exe
+C:\Program Files (x86)\EPSON\EPSON Advanced Printer Driver 4\Sample\T82\Src\VBNET\SingleFunction\Program04\Program04\obj\Debug\Program04.xml
+C:\Program Files (x86)\EPSON\EPSON Advanced Printer Driver 4\Sample\T82\Src\VBNET\SingleFunction\Program04\Program04\obj\Debug\Program04.pdb
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\Program04.exe
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\Program04.pdb
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\Program04.xml
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\Program04.Form1.resources
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\Program04.Resource1.resources
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\Program04.vbproj.GenerateResource.cache
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\Program04.vbproj.CoreCompileInputs.cache
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\Program04.exe
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\Program04.xml
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\Program04.pdb
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\Program04.vbproj.AssemblyReference.cache
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\KaDatabase.mdf
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\KaDatabase_log.ldf
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\Program04.exe.config
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\System.Data.SqlClient.dll
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\System.Data.SqlClient.xml
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\Program04.vbproj.CopyComplete
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\Program04.exe.manifest
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\Program04.application
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\Program04.exe.manifest
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\Program04.application

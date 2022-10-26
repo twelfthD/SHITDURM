@@ -1,0 +1,22 @@
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\SHIRDU Reciept Maker.exe.config
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\SHIRDU Reciept Maker.exe.manifest
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\SHIRDU Reciept Maker.application
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\SHIRDU Reciept Maker.exe
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\SHIRDU Reciept Maker.pdb
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\SHIRDU Reciept Maker.xml
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\System.Data.SqlClient.dll
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\System.Data.SqlClient.xml
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\SHITDU RM.vbproj.AssemblyReference.cache
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\Program04.Form1.resources
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\Program04.Resources.resources
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\Program04.Resource1.resources
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\SHITDU RM.vbproj.GenerateResource.cache
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\SHITDU RM.vbproj.CoreCompileInputs.cache
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\SHIRDU Reciept Maker.exe.manifest
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\SHIRDU Reciept Maker.application
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\SHITDU RM.vbproj.CopyComplete
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\SHIRDU Reciept Maker.exe
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\SHIRDU Reciept Maker.xml
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\SHIRDU Reciept Maker.pdb
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\SHITDUDB.mdf
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\SHITDUDB_log.ldf

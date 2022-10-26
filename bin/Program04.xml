@@ -1,0 +1,101 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Program04
+</name>
+</assembly>
+<members>
+<member name="T:Program04.My.Resources.Resource1">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Program04.My.Resources.Resource1.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Program04.My.Resources.Resource1.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:Program04.My.Resources.Resource1.shidu_logo">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Program04.My.Resources.Resource1.slnoCounter">
+<summary>
+  Looks up a localized string similar to 1.
+</summary>
+</member>
+<member name="T:Program04.KaDatabaseDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Program04.KaDatabaseDataSet.tbrecieptDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Program04.KaDatabaseDataSet.tbrecieptRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Program04.KaDatabaseDataSet.tbrecieptRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Program04.KaDatabaseDataSetTableAdapters.tbrecieptTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Program04.KaDatabaseDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:Program04.KaDatabaseDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(Program04.KaDatabaseDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:Program04.KaDatabaseDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(Program04.KaDatabaseDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:Program04.KaDatabaseDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(Program04.KaDatabaseDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:Program04.KaDatabaseDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:Program04.KaDatabaseDataSetTableAdapters.TableAdapterManager.UpdateAll(Program04.KaDatabaseDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:Program04.KaDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:Program04.KaDatabaseDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+</members>
+</doc>
