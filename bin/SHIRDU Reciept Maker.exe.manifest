@@ -99,7 +99,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>hbbNNotdaWNN7iom+Rjn/AFX93qtCfWymW8LqY5FsRs=</dsig:DigestValue>
+      <dsig:DigestValue>9m0b+g8gHu7nlqNE3BA2Yumu+E+xnT0LzvlwkmkhDgo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SHITDUDB_log.ldf" size="786432" writeableType="applicationData">
@@ -108,7 +108,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>EWB1Np9SRRVVwJ6DyOkqgZ41pag08UP9+o4bAKvcKrg=</dsig:DigestValue>
+      <dsig:DigestValue>LCj79/X9IYZF8oWprwE6pdawTXjgkh4NJVtK/Dyfog4=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
