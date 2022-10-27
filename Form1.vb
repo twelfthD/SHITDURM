@@ -145,7 +145,7 @@ Public Class Form1
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(176, 13)
         Me.Label6.TabIndex = 19
-        Me.Label6.Text = "SHITDU Receipt Maker - Ver. 1.0.0"
+        Me.Label6.Text = "SHITDU Receipt Maker - Ver. 1.0.0.4"
         '
         'TextBoxAmount
         '
@@ -218,7 +218,7 @@ Public Class Form1
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(228, 26)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "SADAR HILLS INLAND" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "TRANSPORTER AND DRIVER' UNION" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label1.Text = "SADAR HILLS INLAND" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "TRANSPORTER AND DRIVER'S UNION" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pbImage
@@ -271,7 +271,7 @@ Public Class Form1
     End Sub
 
 #End Region
-    Dim conn As New SqlConnection("Data Source=(localdb)\MSSQLLocalDB; AttachDbFilename=|DataDirectory|\SHITDUDB.mdf;Integrated Security=true")
+    Dim conn As New SqlConnection("Data Source=(localdb)\MSSQLLocalDB; AttachDbFilename=C:\USERS\SAMUEL KIPGEN\DOCUMENTS\VISUAL STUDIO 2019\POS\PROGRAM04\PROGRAM04\SHITDUDB.MDF;Integrated Security=true")
     Public Sub ExecuteQuery(ByVal query As String)
         Dim cmd As New SqlCommand(query, conn)
         conn.Open()
@@ -300,9 +300,27 @@ Public Class Form1
         pdPrint.PrinterSettings.PrinterName = PRINTER_NAME
 
         If pdPrint.PrinterSettings.IsValid Then
-            pdPrint.DocumentName = "Printing SlNo. "
-            ' Start printing
-            pdPrint.Print()
+            If MessageBox.Show("Save Record and Print", "CONFIRM", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) = DialogResult.OK Then
+                pdPrint.DocumentName = "Printing SlNo. " + LabelSlno.Text.ToString
+
+                Dim insertquery As String = "INSERT INTO tbReciept(DateTime,VehicleNo,Amount)VALUES('" & txtDateTime.Value & "','" & txtVehicleno.Text & "','" & TextBoxAmount.Text & "')"
+                ExecuteQuery(insertquery)
+
+
+                Dim counter As String = LabelSlno.Text
+                Dim counter2int As Int32 = CInt(counter)
+                counter2int = counter2int
+                LabelSlno.Text = counter2int.ToString
+
+                ' Start printing
+                pdPrint.Print()
+
+                counter2int = counter2int + 1
+                LabelSlno.Text = counter2int.ToString
+                txtVehicleno.Clear()
+            End If
+
+
         Else
             MessageBox.Show("Printer is not available.", "SHITDU Reciept Maker", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
@@ -333,15 +351,10 @@ Public Class Form1
         y += lineOffset
         y += lineOffset
 
-        Dim insertquery As String = "INSERT INTO tbReciept(DateTime,VehicleNo,Amount)VALUES('" & txtDateTime.Value & "','" & txtVehicleno.Text & "','" & TextBoxAmount.Text & "')"
-        ExecuteQuery(insertquery)
-        MessageBox.Show("Record Saved and Printed", "INSERT", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        txtVehicleno.Clear()
 
-        Dim counter As String = LabelSlno.Text
-        Dim counter2int As Int32 = CInt(counter)
-        counter2int = counter2int + 1
-        LabelSlno.Text = counter2int.ToString
+
+
+
 
 
 
@@ -358,6 +371,9 @@ Public Class Form1
 
         ' Indicate that no more data to print, and the Print Document can now send the print data to the spooler.
         e.HasMorePages = False
+
+
+
     End Sub
 
     ' The executed function when the Close button is clicked.
