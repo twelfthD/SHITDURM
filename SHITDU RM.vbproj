@@ -45,7 +45,7 @@
     <ProductName>SHITDU RM</ProductName>
     <PublisherName>twelfthd%40github.com</PublisherName>
     <SuiteName>SHITDU RM</SuiteName>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
