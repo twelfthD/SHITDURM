@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="SHIRDU Reciept Maker.exe" version="1.0.0.7" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="SHIRDU Reciept Maker.exe" version="1.1.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="SHITDU_LOGO.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SHIRDU Reciept Maker.exe" size="5021200">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SHIRDU Reciept Maker.exe" size="5027344">
       <assemblyIdentity name="SHIRDU Reciept Maker" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Ys+d6UgGenA6rJgMCifZQNWD3o02FF8DJlFvW91HNJI=</dsig:DigestValue>
+        <dsig:DigestValue>V9jiN3XAfQAInARUBPAYmsVAhJiJJ1/SdBdnxmXE/q8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -147,7 +147,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ygv0RITB8usszLQPQHUfqjlmDz9xsXXbg8ozrlUV7b4=</dsig:DigestValue>
+      <dsig:DigestValue>Pmzqy3Pdw5U9xM6R4xrh4iY9qGXCRFzIt/ARPkNGWJ0=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SHITDUDB_log.ldf" size="786432" writeableType="applicationData">
@@ -156,7 +156,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>E+WAGpkwlb/8vpz6dkLg3FOs1V1doLvCJlBtMy6+yDU=</dsig:DigestValue>
+      <dsig:DigestValue>rnZljbhNFZcVU55HHRD7CKCkYWbMhjnE9jsBP/XDT7Q=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

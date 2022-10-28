@@ -28,3 +28,4 @@ C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\
 C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\ClosedXML.xml
 C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\DocumentFormat.OpenXml.xml
 C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\ExcelNumberFormat.xml
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\SHITDU RM.vbproj.ResolveComReference.cache

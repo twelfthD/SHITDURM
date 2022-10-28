@@ -2,12 +2,13 @@ Imports System.Drawing.Printing
 Imports System.Data.SqlClient
 Imports System.Printing
 
+
 Public Class Form1
     Inherits System.Windows.Forms.Form
 
     ' Constant variable holding the Printer name.
-    Private Const PRINTER_NAME As String = "Microsoft Print to PDF"
-    'Private Const PRINTER_NAME As String = "EPSON TM-T82 Receipt"
+    ' Private Const PRINTER_NAME As String = "Microsoft Print to PDF"
+    Private Const PRINTER_NAME As String = "EPSON TM-T82 Receipt"
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents pbImage As PictureBox
@@ -20,7 +21,7 @@ Public Class Form1
     Friend WithEvents Label7 As Label
     Friend WithEvents LabelSlno As Label
     Friend WithEvents txtDateTime As DateTimePicker
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnExport As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents SHITDUDBDataSet As SHITDUDBDataSet
     Friend WithEvents TbRecieptBindingSource As BindingSource
@@ -58,19 +59,14 @@ Public Class Form1
 
     'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
-
-    'NOTE: The following procedure is required by the Windows Form Designer
-    'It can be modified using the Windows Form Designer.  
-    'Do not modify it using the code editor.
-    Friend WithEvents cmdClose As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents cmdPrint As System.Windows.Forms.Button
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.cmdClose = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.btnExport = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateTimeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -92,7 +88,6 @@ Public Class Form1
         Me.pbImage = New System.Windows.Forms.PictureBox()
         Me.cmdPrint = New System.Windows.Forms.Button()
         Me.TbRecieptTableAdapter = New Program04.SHITDUDBDataSetTableAdapters.tbRecieptTableAdapter()
-        Me.btnRefresh = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TbRecieptBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,20 +95,10 @@ Public Class Form1
         CType(Me.pbImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'cmdClose
-        '
-        Me.cmdClose.BackColor = System.Drawing.Color.Tomato
-        Me.cmdClose.Location = New System.Drawing.Point(134, 256)
-        Me.cmdClose.Name = "cmdClose"
-        Me.cmdClose.Size = New System.Drawing.Size(120, 65)
-        Me.cmdClose.TabIndex = 3
-        Me.cmdClose.Text = "Close"
-        Me.cmdClose.UseVisualStyleBackColor = False
-        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.btnRefresh)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.btnExport)
         Me.GroupBox1.Controls.Add(Me.DataGridView1)
         Me.GroupBox1.Controls.Add(Me.txtDateTime)
         Me.GroupBox1.Controls.Add(Me.LabelSlno)
@@ -128,22 +113,30 @@ Public Class Form1
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.pbImage)
         Me.GroupBox1.Controls.Add(Me.cmdPrint)
-        Me.GroupBox1.Controls.Add(Me.cmdClose)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(757, 329)
+        Me.GroupBox1.Size = New System.Drawing.Size(756, 329)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Print Receipt"
         '
-        'Button1
+        'btnRefresh
         '
-        Me.Button1.Location = New System.Drawing.Point(667, 295)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 24
-        Me.Button1.Text = "Export"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnRefresh.Location = New System.Drawing.Point(586, 298)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(75, 23)
+        Me.btnRefresh.TabIndex = 25
+        Me.btnRefresh.Text = "Refresh"
+        Me.btnRefresh.UseVisualStyleBackColor = True
+        '
+        'btnExport
+        '
+        Me.btnExport.Location = New System.Drawing.Point(667, 298)
+        Me.btnExport.Name = "btnExport"
+        Me.btnExport.Size = New System.Drawing.Size(75, 23)
+        Me.btnExport.TabIndex = 24
+        Me.btnExport.Text = "Export"
+        Me.btnExport.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
@@ -193,9 +186,10 @@ Public Class Form1
         '
         'txtDateTime
         '
-        Me.txtDateTime.Location = New System.Drawing.Point(69, 106)
+        Me.txtDateTime.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.txtDateTime.Location = New System.Drawing.Point(88, 106)
         Me.txtDateTime.Name = "txtDateTime"
-        Me.txtDateTime.Size = New System.Drawing.Size(129, 20)
+        Me.txtDateTime.Size = New System.Drawing.Size(99, 20)
         Me.txtDateTime.TabIndex = 22
         '
         'LabelSlno
@@ -211,7 +205,7 @@ Public Class Form1
         '
         Me.Label7.AutoSize = True
         Me.Label7.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Label7.Location = New System.Drawing.Point(339, 308)
+        Me.Label7.Location = New System.Drawing.Point(315, 310)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(143, 13)
         Me.Label7.TabIndex = 20
@@ -221,11 +215,11 @@ Public Class Form1
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Label6.Location = New System.Drawing.Point(322, 295)
+        Me.Label6.Location = New System.Drawing.Point(294, 297)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(185, 13)
         Me.Label6.TabIndex = 19
-        Me.Label6.Text = "SHITDU Receipt Maker - Ver. 1.0.0.6"
+        Me.Label6.Text = "SHITDU Receipt Maker - Ver. 1.1.0.3"
         '
         'TextBoxAmount
         '
@@ -281,7 +275,7 @@ Public Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label2.Location = New System.Drawing.Point(24, 51)
+        Me.Label2.Location = New System.Drawing.Point(28, 51)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(218, 39)
         Me.Label2.TabIndex = 6
@@ -314,9 +308,10 @@ Public Class Form1
         'cmdPrint
         '
         Me.cmdPrint.BackColor = System.Drawing.Color.GreenYellow
-        Me.cmdPrint.Location = New System.Drawing.Point(13, 256)
+        Me.cmdPrint.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdPrint.Location = New System.Drawing.Point(97, 253)
         Me.cmdPrint.Name = "cmdPrint"
-        Me.cmdPrint.Size = New System.Drawing.Size(120, 65)
+        Me.cmdPrint.Size = New System.Drawing.Size(103, 57)
         Me.cmdPrint.TabIndex = 0
         Me.cmdPrint.Text = "Print"
         Me.cmdPrint.UseVisualStyleBackColor = False
@@ -325,19 +320,10 @@ Public Class Form1
         '
         Me.TbRecieptTableAdapter.ClearBeforeFill = True
         '
-        'btnRefresh
-        '
-        Me.btnRefresh.Location = New System.Drawing.Point(586, 295)
-        Me.btnRefresh.Name = "btnRefresh"
-        Me.btnRefresh.Size = New System.Drawing.Size(75, 23)
-        Me.btnRefresh.TabIndex = 25
-        Me.btnRefresh.Text = "Refresh"
-        Me.btnRefresh.UseVisualStyleBackColor = True
-        '
         'Form1
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-        Me.ClientSize = New System.Drawing.Size(777, 347)
+        Me.ClientSize = New System.Drawing.Size(771, 347)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
@@ -363,7 +349,7 @@ Public Class Form1
         cmd.ExecuteNonQuery()
         conn.Close()
     End Sub
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load, btnRefresh.Click
         'TODO: This line of code loads data into the 'SHITDUDBDataSet.tbReciept' table. You can move, or remove it, as needed.
         Me.TbRecieptTableAdapter.Fill(Me.SHITDUDBDataSet.tbReciept)
 
@@ -388,7 +374,7 @@ Public Class Form1
         ' Change the printer to the indicated printer
         pdPrint.PrinterSettings.PrinterName = PRINTER_NAME
 
-
+        Dim userPrinterName As New PrinterSettings()
         Dim myDefaultQueue As PrintQueue = Nothing
 
         Dim localPrintServer As New LocalPrintServer()
@@ -396,40 +382,45 @@ Public Class Form1
         myDefaultQueue = LocalPrintServer.GetDefaultPrintQueue
 
         myDefaultQueue.Refresh()
-        If myDefaultQueue.IsNotAvailable And myDefaultQueue.IsOffline = False Then
-            MessageBox.Show("Your printer is offline")
-        Else
-            'MessageBox.Show("Your printer is Online")
-            If pdPrint.PrinterSettings.IsValid Then
-                'If myDefaultQueue.IsNotAvailable And myDefaultQueue.IsOffline = False Then
 
-                'MessageBox.Show("Your printer is offline")
+        Dim uPrintername As String = "EPSON TM-T82 Receipt"
+        If userPrinterName.PrinterName = uPrintername Then
 
-                'End If
+            If myDefaultQueue.IsNotAvailable Then
+                MessageBox.Show("Your printer is Offline or Not Available")
+            Else
 
-                If MessageBox.Show("Save Record and Print", "CONFIRM", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) = DialogResult.OK Then
-                    pdPrint.DocumentName = "Printing SlNo. " + LabelSlno.Text.ToString
+                'MessageBox.Show("Your printer is Online")
+                If pdPrint.PrinterSettings.IsValid Then
+                    'If myDefaultQueue.IsNotAvailable And myDefaultQueue.IsOffline = False Then
 
-                    Dim insertquery As String = "INSERT INTO tbReciept(DateTime,VehicleNo,Amount)VALUES('" & txtDateTime.Value & "','" & txtVehicleno.Text & "','" & TextBoxAmount.Text & "')"
-                    ExecuteQuery(insertquery)
+                    'MessageBox.Show("Your printer is offline")
+
+                    'End If
+
+                    If MessageBox.Show("Save Record and Print", "CONFIRM", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) = DialogResult.OK Then
+                        pdPrint.DocumentName = "Printing SlNo. " + LabelSlno.Text.ToString
+
+                        Dim insertquery As String = "INSERT INTO tbReciept(DateTime,VehicleNo,Amount)VALUES('" & txtDateTime.Value & "','" & txtVehicleno.Text & "','" & TextBoxAmount.Text & "')"
+                        ExecuteQuery(insertquery)
 
 
-                    Dim counter As String = LabelSlno.Text
-                    Dim counter2int As Int32 = CInt(counter)
-                    counter2int = counter2int
-                    LabelSlno.Text = counter2int.ToString
+                        Dim counter As String = LabelSlno.Text
+                        Dim counter2int As Int32 = CInt(counter)
+                        counter2int = counter2int
+                        LabelSlno.Text = counter2int.ToString
 
-                    ' Start printing
-                    pdPrint.Print()
+                        ' Start printing
+                        pdPrint.Print()
 
-                    counter2int = counter2int + 1
-                    LabelSlno.Text = counter2int.ToString
-                    txtVehicleno.Clear()
+                        counter2int = counter2int + 1
+                        LabelSlno.Text = counter2int.ToString
+                        txtVehicleno.Clear()
+                    End If
                 End If
             End If
-
-
-            'MessageBox.Show("Print Cancled")
+        Else
+            MessageBox.Show("Please set 'EPSON TM-T82 Receipt' as your Default Printer. Your Default Printer is '" + userPrinterName.PrinterName.ToString + "'")
         End If
 
 
@@ -461,13 +452,6 @@ Public Class Form1
         y += lineOffset
         y += lineOffset
 
-
-
-
-
-
-
-
         e.Graphics.DrawString("SL.N0.: " + LabelSlno.Text, printFont2, Brushes.Black, x, y)
         y += lineOffset + (lineOffset * 1.5)
         e.Graphics.DrawString("Vehicle No: " + txtVehicleno.Text, printFont2, Brushes.Black, x, y)
@@ -487,7 +471,7 @@ Public Class Form1
     End Sub
 
     ' The executed function when the Close button is clicked.
-    Private Sub cmdClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClose.Click
+    Private Sub cmdClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Close()
     End Sub
 
@@ -540,11 +524,61 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
+    Private Sub ReleaseObject(ByVal obj As Object)
+        Try
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+            obj = Nothing
+        Catch ex As Exception
+            obj = Nothing
+        Finally
+            GC.Collect()
+        End Try
+    End Sub
+    Private Sub BtnExport_Click(sender As Object, e As EventArgs) Handles btnExport.Click
+        Try
+            Dim xlApp As Microsoft.Office.Interop.Excel.Application
+            Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook
+            Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
+            Dim misValue As Object = System.Reflection.Missing.Value
+            Dim i As Integer
+            Dim j As Integer
+            xlApp = New Microsoft.Office.Interop.Excel.Application
+            xlWorkBook = xlApp.Workbooks.Add(misValue)
+            xlWorkSheet = xlWorkBook.Sheets("sheet1")
+            xlWorkSheet.Columns.AutoFit()
+            For i = 0 To DataGridView1.RowCount - 2
+                For j = 0 To DataGridView1.ColumnCount - 1
+                    For k As Integer = 1 To DataGridView1.Columns.Count
+                        xlWorkSheet.Cells(1, k) = DataGridView1.Columns(k - 1).HeaderText
+                        xlWorkSheet.Cells(i + 2, j + 1) = DataGridView1(j, i).Value.ToString()
+                    Next
+                Next
+            Next
+            Dim fName As String = "DataBuku"
+            Using sfd As New SaveFileDialog
+                sfd.Title = "Save As"
+                sfd.OverwritePrompt = True
+                sfd.FileName = fName
+                sfd.DefaultExt = ".xlsx"
+                sfd.Filter = "Excel Workbook(*.xlsx)|"
+                sfd.AddExtension = True
+                If sfd.ShowDialog() = DialogResult.OK Then
+                    xlWorkSheet.SaveAs(sfd.FileName)
+                    xlWorkBook.Close()
+                    xlApp.Quit()
+                    releaseObject(xlApp)
+                    releaseObject(xlWorkBook)
+                    releaseObject(xlWorkSheet)
+                    MsgBox("Database export success !", MsgBoxStyle.Information, "Export to Excel Worksheet")
+                End If
+            End Using
+        Catch ex As Exception
+            conn.Close()
+            MsgBox("Export error ! " & vbCrLf & "Code error: " & ex.Message)
+        End Try
     End Sub
 
-    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

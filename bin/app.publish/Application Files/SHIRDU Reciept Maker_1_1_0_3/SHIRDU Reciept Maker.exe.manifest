@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="SHIRDU Reciept Maker.exe" version="1.1.0.3" publicKeyToken="3be16653199a13b6" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="SHITDU_LOGO.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="SHIRDU Reciept Maker" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
+    <commandLine file="SHIRDU Reciept Maker.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClosedXML.dll" size="1184256">
+      <assemblyIdentity name="ClosedXML" version="0.95.4.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>D7ePctFwlE5qeNC2MdYpSH2YS7oWOj4qpyMr093PJb8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DocumentFormat.OpenXml.dll" size="5697824">
+      <assemblyIdentity name="DocumentFormat.OpenXml" version="2.7.2.0" publicKeyToken="8FB06CB64D019A17" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>poeWiknlhBNq1OeIpsSUWt4fCGjpLQslgLOzl2R98Uc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ExcelNumberFormat.dll" size="28160">
+      <assemblyIdentity name="ExcelNumberFormat" version="1.0.10.0" publicKeyToken="23C6F5D73BE07ECA" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>J2gCiGcsqPn4/MoBGNMvcNAHOUBV8X5lI5SZyVuAOw0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SHIRDU Reciept Maker.exe" size="5027344">
+      <assemblyIdentity name="SHIRDU Reciept Maker" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>V9jiN3XAfQAInARUBPAYmsVAhJiJJ1/SdBdnxmXE/q8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SqlClient.dll" size="223656">
+      <assemblyIdentity name="System.Data.SqlClient" version="4.6.1.4" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>BT2e0ATImQw9XKfag45xT8+BMT+DtejyglBrc1Jvggk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.IO.Packaging.dll" size="51920">
+      <assemblyIdentity name="System.IO.Packaging" version="4.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>a77yplv1/pj7P2UX/7ewHe3KepCwTXd6zzD7X6HpI9g=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="shidu_logo.bmp" size="2343488">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ueJMRmQPxuP63eb+maXNwuamtz2f+azMk8bBDYGOAeE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="SHIRDU Reciept Maker.exe.config" size="1722">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>zG+Uc36XyXijH8BGJbRyFR6ENfWCgki6Abrd4w4fZV0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="SHITDU_LOGO.ico" size="266174">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>5klDKRDB2Yy2Q/W6CC8Q2zhqlYTUkGzgnBcl8ASkRUw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="SHITDUDB.mdf" size="8388608" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Pmzqy3Pdw5U9xM6R4xrh4iY9qGXCRFzIt/ARPkNGWJ0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="SHITDUDB_log.ldf" size="786432" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>rnZljbhNFZcVU55HHRD7CKCkYWbMhjnE9jsBP/XDT7Q=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=SAMUELKIPGEN-PC\Samuel Kipgen" issuerKeyHash="9d87e1dd2b6e6a07de24423dcdb94b2b471609af" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>ua82/45BO/poaqsClCDFVtICg9nEa3Bd/wsGPe6fDTs=</DigestValue></Reference></SignedInfo><SignatureValue>DKF95xT+nkqTA8M1d3lFXT7R47WYxzSzGx0d4zhnLYjmxlE2ZGfnc6INWvnsWTgyGAk5itfTk7wdoK4/K1xnR8dMQlTIk8hsaX4/78pLnbPNSS75hPW6GXUvOC4HG0DuYi32LOA1mVDsud6jP4MQB3drt7fPA5U0qUhdRMoo9zw=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>tsY99sdDm9z3HVx9Q8fRLEfkFhOmJ6OVBxyA0MOAW/Jtvx38aF2UykEiU+2DaifqSrHlRk8OZi4mVu9pMu+kAEM6AP1WYvV8VYXmPEWgG++9ulEnaGlJBmDHqLcC+jGRw1Iru5jIATiTWRJdvK8fBnA6t6pQr2B62opJg8ntH4E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="3b0d9fee3d060bff5d706bc4d98302d256c5209402ab6a68fa3b418eff36afb9" Description="" Url=""><as:assemblyIdentity name="SHIRDU Reciept Maker.exe" version="1.1.0.3" publicKeyToken="3be16653199a13b6" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=SAMUELKIPGEN-PC\Samuel Kipgen</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>C3+1g8ctpCiDYIy1bl8ZQNVosaaPYrFMmORm06CrJus=</DigestValue></Reference></SignedInfo><SignatureValue>iIPiWQVXKIC+f8mJBFmwsrNoWm0NzgykUc8J7FWDiROHRRGihzg+U3dPHGXW6ltZFQTc3hKKsefnMcF75ETxDrdJFBWKsYC3H659fEM7LLvUhPDXNXrzsnd+YAtTBZ4MI/P7w+LG24PqiXAr+v7+kN48b0ydX6AON7w2Cqip1h8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>tsY99sdDm9z3HVx9Q8fRLEfkFhOmJ6OVBxyA0MOAW/Jtvx38aF2UykEiU+2DaifqSrHlRk8OZi4mVu9pMu+kAEM6AP1WYvV8VYXmPEWgG++9ulEnaGlJBmDHqLcC+jGRw1Iru5jIATiTWRJdvK8fBnA6t6pQr2B62opJg8ntH4E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICDTCCAXagAwIBAgIQJuy1Bm3ajrNGedNN+VfXLTANBgkqhkiG9w0BAQsFADBFMUMwQQYDVQQDHjoAUwBBAE0AVQBFAEwASwBJAFAARwBFAE4ALQBQAEMAXABTAGEAbQB1AGUAbAAgAEsAaQBwAGcAZQBuMB4XDTIyMTAyNjE0NTg1MVoXDTIzMTAyNjIwNTg1MVowRTFDMEEGA1UEAx46AFMAQQBNAFUARQBMAEsASQBQAEcARQBOAC0AUABDAFwAUwBhAG0AdQBlAGwAIABLAGkAcABnAGUAbjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAtsY99sdDm9z3HVx9Q8fRLEfkFhOmJ6OVBxyA0MOAW/Jtvx38aF2UykEiU+2DaifqSrHlRk8OZi4mVu9pMu+kAEM6AP1WYvV8VYXmPEWgG++9ulEnaGlJBmDHqLcC+jGRw1Iru5jIATiTWRJdvK8fBnA6t6pQr2B62opJg8ntH4ECAwEAATANBgkqhkiG9w0BAQsFAAOBgQBkrjj+TKGzkIpR6hxE9eHgDYEUhiPz8WNNW+ysLUWyF+iTg1umRQEZY7Z8O83OWNzkas4n5Yddbzksdq0ujjwOhfosqkl/s8m1rig+wbVZl9FJ1fUV5/JWD3eQRIbT8f3vYuMP8fzSQbNcGvQvhzjO82KLWoy6OMj/GEY9Asr/tA==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
