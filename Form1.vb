@@ -1,5 +1,7 @@
 Imports System.Drawing.Printing
 Imports System.Data.SqlClient
+Imports System.Printing
+
 Public Class Form1
     Inherits System.Windows.Forms.Form
 
@@ -299,31 +301,52 @@ Public Class Form1
         ' Change the printer to the indicated printer
         pdPrint.PrinterSettings.PrinterName = PRINTER_NAME
 
-        If pdPrint.PrinterSettings.IsValid Then
-            If MessageBox.Show("Save Record and Print", "CONFIRM", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) = DialogResult.OK Then
-                pdPrint.DocumentName = "Printing SlNo. " + LabelSlno.Text.ToString
 
-                Dim insertquery As String = "INSERT INTO tbReciept(DateTime,VehicleNo,Amount)VALUES('" & txtDateTime.Value & "','" & txtVehicleno.Text & "','" & TextBoxAmount.Text & "')"
-                ExecuteQuery(insertquery)
+        Dim myDefaultQueue As PrintQueue = Nothing
+
+        Dim localPrintServer As New LocalPrintServer()
+        ' Retrieving collection of local printer on user machine
+        myDefaultQueue = LocalPrintServer.GetDefaultPrintQueue
+
+        myDefaultQueue.Refresh()
+        If myDefaultQueue.IsNotAvailable And myDefaultQueue.IsOffline = False Then
+            MessageBox.Show("Your printer is offline")
+        Else
+            MessageBox.Show("Your printer is Online")
+            If pdPrint.PrinterSettings.IsValid Then
+                'If myDefaultQueue.IsNotAvailable And myDefaultQueue.IsOffline = False Then
+
+                'MessageBox.Show("Your printer is offline")
+
+                'End If
+
+                If MessageBox.Show("Save Record and Print", "CONFIRM", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) = DialogResult.OK Then
+                    pdPrint.DocumentName = "Printing SlNo. " + LabelSlno.Text.ToString
+
+                    Dim insertquery As String = "INSERT INTO tbReciept(DateTime,VehicleNo,Amount)VALUES('" & txtDateTime.Value & "','" & txtVehicleno.Text & "','" & TextBoxAmount.Text & "')"
+                    ExecuteQuery(insertquery)
 
 
-                Dim counter As String = LabelSlno.Text
-                Dim counter2int As Int32 = CInt(counter)
-                counter2int = counter2int
-                LabelSlno.Text = counter2int.ToString
+                    Dim counter As String = LabelSlno.Text
+                    Dim counter2int As Int32 = CInt(counter)
+                    counter2int = counter2int
+                    LabelSlno.Text = counter2int.ToString
 
-                ' Start printing
-                pdPrint.Print()
+                    ' Start printing
+                    pdPrint.Print()
 
-                counter2int = counter2int + 1
-                LabelSlno.Text = counter2int.ToString
-                txtVehicleno.Clear()
+                    counter2int = counter2int + 1
+                    LabelSlno.Text = counter2int.ToString
+                    txtVehicleno.Clear()
+                End If
             End If
 
 
-        Else
-            MessageBox.Show("Printer is not available.", "SHITDU Reciept Maker", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        MessageBox.Show("Printer is not available.", "SHITDU Reciept Maker", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
+
+
+
     End Sub
 
     ' The event handler function when pdPrint.Print is called.
