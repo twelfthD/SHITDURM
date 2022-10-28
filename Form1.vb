@@ -6,8 +6,8 @@ Public Class Form1
     Inherits System.Windows.Forms.Form
 
     ' Constant variable holding the Printer name.
-    ' Private Const PRINTER_NAME As String = "Microsoft Print to PDF"
-    Private Const PRINTER_NAME As String = "EPSON TM-T82 Receipt"
+    Private Const PRINTER_NAME As String = "Microsoft Print to PDF"
+    'Private Const PRINTER_NAME As String = "EPSON TM-T82 Receipt"
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents pbImage As PictureBox
@@ -20,7 +20,16 @@ Public Class Form1
     Friend WithEvents Label7 As Label
     Friend WithEvents LabelSlno As Label
     Friend WithEvents txtDateTime As DateTimePicker
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents SHITDUDBDataSet As SHITDUDBDataSet
+    Friend WithEvents TbRecieptBindingSource As BindingSource
+    Friend WithEvents TbRecieptTableAdapter As SHITDUDBDataSetTableAdapters.tbRecieptTableAdapter
+    Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DateTimeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents VehicleNoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents AmountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btnRefresh As Button
 
     ' Variables/Objects.
     Private WithEvents pdPrint As PrintDocument
@@ -57,9 +66,18 @@ Public Class Form1
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents cmdPrint As System.Windows.Forms.Button
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.cmdClose = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateTimeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VehicleNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TbRecieptBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SHITDUDBDataSet = New Program04.SHITDUDBDataSet()
         Me.txtDateTime = New System.Windows.Forms.DateTimePicker()
         Me.LabelSlno = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -73,10 +91,13 @@ Public Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pbImage = New System.Windows.Forms.PictureBox()
         Me.cmdPrint = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TbRecieptTableAdapter = New Program04.SHITDUDBDataSetTableAdapters.tbRecieptTableAdapter()
+        Me.btnRefresh = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TbRecieptBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SHITDUDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbImage, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmdClose
@@ -91,7 +112,9 @@ Public Class Form1
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.PictureBox1)
+        Me.GroupBox1.Controls.Add(Me.btnRefresh)
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.DataGridView1)
         Me.GroupBox1.Controls.Add(Me.txtDateTime)
         Me.GroupBox1.Controls.Add(Me.LabelSlno)
         Me.GroupBox1.Controls.Add(Me.Label7)
@@ -108,10 +131,65 @@ Public Class Form1
         Me.GroupBox1.Controls.Add(Me.cmdClose)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(559, 329)
+        Me.GroupBox1.Size = New System.Drawing.Size(757, 329)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Print Receipt"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(667, 295)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 24
+        Me.Button1.Text = "Export"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.DateTimeDataGridViewTextBoxColumn, Me.VehicleNoDataGridViewTextBoxColumn, Me.AmountDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.TbRecieptBindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(300, 19)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(442, 273)
+        Me.DataGridView1.TabIndex = 23
+        '
+        'IdDataGridViewTextBoxColumn
+        '
+        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
+        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
+        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
+        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DateTimeDataGridViewTextBoxColumn
+        '
+        Me.DateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime"
+        Me.DateTimeDataGridViewTextBoxColumn.HeaderText = "DateTime"
+        Me.DateTimeDataGridViewTextBoxColumn.Name = "DateTimeDataGridViewTextBoxColumn"
+        '
+        'VehicleNoDataGridViewTextBoxColumn
+        '
+        Me.VehicleNoDataGridViewTextBoxColumn.DataPropertyName = "VehicleNo"
+        Me.VehicleNoDataGridViewTextBoxColumn.HeaderText = "VehicleNo"
+        Me.VehicleNoDataGridViewTextBoxColumn.Name = "VehicleNoDataGridViewTextBoxColumn"
+        '
+        'AmountDataGridViewTextBoxColumn
+        '
+        Me.AmountDataGridViewTextBoxColumn.DataPropertyName = "Amount"
+        Me.AmountDataGridViewTextBoxColumn.HeaderText = "Amount"
+        Me.AmountDataGridViewTextBoxColumn.Name = "AmountDataGridViewTextBoxColumn"
+        '
+        'TbRecieptBindingSource
+        '
+        Me.TbRecieptBindingSource.DataMember = "tbReciept"
+        Me.TbRecieptBindingSource.DataSource = Me.SHITDUDBDataSet
+        '
+        'SHITDUDBDataSet
+        '
+        Me.SHITDUDBDataSet.DataSetName = "SHITDUDBDataSet"
+        Me.SHITDUDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'txtDateTime
         '
@@ -145,7 +223,7 @@ Public Class Form1
         Me.Label6.ForeColor = System.Drawing.SystemColors.AppWorkspace
         Me.Label6.Location = New System.Drawing.Point(322, 295)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(176, 13)
+        Me.Label6.Size = New System.Drawing.Size(185, 13)
         Me.Label6.TabIndex = 19
         Me.Label6.Text = "SHITDU Receipt Maker - Ver. 1.0.0.6"
         '
@@ -156,7 +234,7 @@ Public Class Form1
         Me.TextBoxAmount.Name = "TextBoxAmount"
         Me.TextBoxAmount.Size = New System.Drawing.Size(130, 20)
         Me.TextBoxAmount.TabIndex = 16
-        Me.TextBoxAmount.Text = "100"
+        Me.TextBoxAmount.Text = "50"
         '
         'Label5
         '
@@ -218,7 +296,7 @@ Public Class Form1
         Me.Label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Label1.Location = New System.Drawing.Point(19, 25)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(228, 26)
+        Me.Label1.Size = New System.Drawing.Size(236, 26)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "SADAR HILLS INLAND" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "TRANSPORTER AND DRIVER'S UNION" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -243,20 +321,23 @@ Public Class Form1
         Me.cmdPrint.Text = "Print"
         Me.cmdPrint.UseVisualStyleBackColor = False
         '
-        'PictureBox1
+        'TbRecieptTableAdapter
         '
-        Me.PictureBox1.Image = Global.Program04.My.Resources.Resource1.shidu_logo
-        Me.PictureBox1.Location = New System.Drawing.Point(287, 19)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(257, 258)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
+        Me.TbRecieptTableAdapter.ClearBeforeFill = True
+        '
+        'btnRefresh
+        '
+        Me.btnRefresh.Location = New System.Drawing.Point(586, 295)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(75, 23)
+        Me.btnRefresh.TabIndex = 25
+        Me.btnRefresh.Text = "Refresh"
+        Me.btnRefresh.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-        Me.ClientSize = New System.Drawing.Size(573, 347)
+        Me.ClientSize = New System.Drawing.Size(777, 347)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
@@ -266,8 +347,10 @@ Public Class Form1
         Me.Text = "SHITDU RECIEPT MAKER"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TbRecieptBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SHITDUDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbImage, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -281,6 +364,9 @@ Public Class Form1
         conn.Close()
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'TODO: This line of code loads data into the 'SHITDUDBDataSet.tbReciept' table. You can move, or remove it, as needed.
+        Me.TbRecieptTableAdapter.Fill(Me.SHITDUDBDataSet.tbReciept)
+
         Dim loadSlno As String = "SELECT MAX(Id) FROM tbReciept"
         Dim cmd As New SqlCommand(loadSlno, conn)
         Dim da As New SqlDataAdapter(cmd)
@@ -294,6 +380,7 @@ Public Class Form1
 
         counter = counter + 1
         LabelSlno.Text = counter.ToString
+
     End Sub
     ' The executed function when the Print button is clicked.
     Private Sub cmdPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdPrint.Click
@@ -450,6 +537,14 @@ Public Class Form1
 
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+    End Sub
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
 
     End Sub
 End Class

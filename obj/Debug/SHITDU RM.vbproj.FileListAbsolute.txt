@@ -20,3 +20,11 @@ C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\
 C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\obj\Debug\SHIRDU Reciept Maker.pdb
 C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\SHITDUDB.mdf
 C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\SHITDUDB_log.ldf
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\ClosedXML.dll
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\DocumentFormat.OpenXml.dll
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\ExcelNumberFormat.dll
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\System.IO.Packaging.dll
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\ClosedXML.pdb
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\ClosedXML.xml
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\DocumentFormat.OpenXml.xml
+C:\Users\Samuel Kipgen\Documents\Visual Studio 2019\POS\Program04\Program04\bin\ExcelNumberFormat.xml
