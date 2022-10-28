@@ -32,7 +32,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <TargetFrameworkProfile />
-    <PublishUrl>C:\Users\Samuel Kipgen\Documents\Publish App\SHITDU RM-v1.0.0.5\</PublishUrl>
+    <PublishUrl>C:\Users\Samuel Kipgen\Documents\Publish App\SHITDU RM-v1.0.0.6\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -45,7 +45,7 @@
     <ProductName>SHITDU RM</ProductName>
     <PublisherName>twelfthd%40github.com</PublisherName>
     <SuiteName>SHITDU RM</SuiteName>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

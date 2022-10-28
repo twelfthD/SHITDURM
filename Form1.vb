@@ -147,7 +147,7 @@ Public Class Form1
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(176, 13)
         Me.Label6.TabIndex = 19
-        Me.Label6.Text = "SHITDU Receipt Maker - Ver. 1.0.0.4"
+        Me.Label6.Text = "SHITDU Receipt Maker - Ver. 1.0.0.6"
         '
         'TextBoxAmount
         '
@@ -273,7 +273,7 @@ Public Class Form1
     End Sub
 
 #End Region
-    Dim conn As New SqlConnection("Data Source=(localdb)\MSSQLLocalDB; AttachDbFilename=C:\USERS\SAMUEL KIPGEN\DOCUMENTS\VISUAL STUDIO 2019\POS\PROGRAM04\PROGRAM04\SHITDUDB.MDF;Integrated Security=true")
+    Dim conn As New SqlConnection("Data Source=(localdb)\MSSQLLocalDB; AttachDbFilename=|DataDirectory|\SHITDUDB.MDF;Integrated Security=true")
     Public Sub ExecuteQuery(ByVal query As String)
         Dim cmd As New SqlCommand(query, conn)
         conn.Open()
@@ -312,7 +312,7 @@ Public Class Form1
         If myDefaultQueue.IsNotAvailable And myDefaultQueue.IsOffline = False Then
             MessageBox.Show("Your printer is offline")
         Else
-            MessageBox.Show("Your printer is Online")
+            'MessageBox.Show("Your printer is Online")
             If pdPrint.PrinterSettings.IsValid Then
                 'If myDefaultQueue.IsNotAvailable And myDefaultQueue.IsOffline = False Then
 
@@ -342,7 +342,7 @@ Public Class Form1
             End If
 
 
-        MessageBox.Show("Printer is not available.", "SHITDU Reciept Maker", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            'MessageBox.Show("Print Cancled")
         End If
 
 
